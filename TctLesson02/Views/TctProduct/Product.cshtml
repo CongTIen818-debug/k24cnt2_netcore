@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Thong tin san pham";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@{
+    TctProduct product = ViewData["product"] as TctLesson02.Models.TctProduct;
+}
+
+<div class="alert alert-danger">
+    <h2>Du lieu lay tu ViewData</h2>
+    <p>Ma san pham: @product.ProductID</p>
+    <p>Nam SX: @product.YearRelease</p>
+    <p>Gia: @product.Price</p>
+</div>
+
+<div class="alert alert-info">
+    <h2>Du lieu lay tu ViewBag</h2>
+    <p>Ma san pham: @ViewBag.product.ProductID</p>
+    <p>Ten san pham: @ViewBag.product.ProductName</p>
+    <p>Nam SX: @ViewBag.product.YearRelease</p>
+    <p>Gia: @ViewBag.product.Price</p>
+</div>
