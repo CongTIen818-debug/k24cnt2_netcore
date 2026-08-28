@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Danh sach san pham";
+
+    var products = ViewData["products"] as List<TctLesson03.Models.TctProduct>;
+}
+<div class="card">
+    <div class="card-header">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in products)
+                {
+                    <tr>
+                        <td>@item.TctProductID</td>
+                        <td>@item.TctProductName</td>
+                        <td>@item.TctProductYearRelease</td>
+                        <td>@item.TctProductPrice</td>
+                        <td>
+                            <a href="#" class="btn btn-info">Xem chi tiet</a>
+                            <a href="#" class="btn btn-info">Xua</a>
+                            <a href="#" class="btn btn-info">Xoa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="5">Tong so san pham: @products.Count</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
